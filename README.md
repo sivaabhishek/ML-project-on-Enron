@@ -15,3 +15,14 @@ The aim of this project is to apply machine learning techniques to build a predi
 ## Steps to run program
 
 Check for the necessary requirements by running tools/startup.py then run the final_project/emails.py so that it will generate the word_data.pkl and then finally run the final_project/tester.py.
+
+## Evaluation
+
+The most common measure of an algorithm's performance is its accuracy score i.e., the number of predicted labels it got correct over all predicted labels. When there's a large imbalance in the data labels, then a high accuracy score can be achieved by simply predicting all labels to be the most common label in the dataset. In this context, it would be predicting all labels to be non-POI, which will still result in an accuracy score will be high despite not actually predicting anything.
+
+In these situations, a much better evaluation metric for the algorithm is the precision score and the recall score. The precision score is the ratio of the true positives over the sum of true and false positives, while the recall score is the ratio of the true positives over the sum of true positives and false negatives. In the context of Enron data, the precision score measures the algorithm's ability to, given that it is predicting a POI, correctly predicts a POI, while the recall score measures the algorithm's ability to, given that it is a POI, correctly predicts a POI. The difference will be clearer once the true positives, false positives, true negatives and false negatives are defined in this context:
+
+* True positive: when a label is a POI and the algorithm predicts it is a POI.
+* True negative: when a label is not a POI and the algorithm predicts a non-POI.
+* False positive: when a label is not a POI and the algorithm predicts it is a POI.
+* False negative: when a label is not a POI and the algorithm predicts a POI.
